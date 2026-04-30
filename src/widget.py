@@ -1,3 +1,5 @@
+from datetime import  datetime
+
 from src.masks import get_mask_card_number, get_mask_account
 
 def mask_account_card(my_string: str) -> str:
@@ -16,9 +18,5 @@ def mask_account_card(my_string: str) -> str:
 def get_date(date: str) -> str:
     '''Функция, которая форматирует дату в в формате ДД.ММ.ГГГГ'''
 
-
-
-
-if __name__ == '__main__':
-    print(mask_account_card('Visa Platinum 7000792289606361'))
-    print(mask_account_card('Счет 73654108430135874305'))
+    new_date = datetime.fromisoformat(date).strftime('%d.%m.%Y')
+    return new_date
