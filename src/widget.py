@@ -1,10 +1,11 @@
-from datetime import  datetime
+from datetime import datetime
 
 from src.masks import get_mask_card_number, get_mask_account
 
+
 def mask_account_card(my_string: str) -> str:
-    '''Функция обработки информацию о картах и счетах,
-    и возвращает строку с замаскированным номером'''
+    """Функция обработки информацию о картах и счетах,
+    и возвращает строку с замаскированным номером"""
 
     card_number = get_mask_card_number(my_string)
 
@@ -15,8 +16,9 @@ def mask_account_card(my_string: str) -> str:
     else:
         return card_number
 
-def get_date(date: str) -> str:
-    '''Функция, которая форматирует дату в в формате ДД.ММ.ГГГГ'''
 
-    new_date = datetime.fromisoformat(date).strftime('%d.%m.%Y')
+def get_date(date: str) -> str:
+    """Функция, которая форматирует дату в в формате ДД.ММ.ГГГГ"""
+
+    new_date = datetime.fromisoformat(date).strftime("%d.%m.%Y")
     return new_date
