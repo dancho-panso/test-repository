@@ -7,14 +7,19 @@ def mask_account_card(my_string: str) -> str:
     """Функция обработки информацию о картах и счетах,
     и возвращает строку с замаскированным номером"""
 
-    card_number = get_mask_card_number(my_string)
-
-    card_account = get_mask_account(my_string)
 
     if "Счет" in my_string:
-        return card_account
+        numbers = my_string[-20:]
+        card_account = get_mask_account(numbers)
+        return f'Счет {card_account}'
     else:
-        return card_number
+        elements = my_string.split(" ")
+        card_number = get_mask_card_number(elements[-1])
+        if len(elements) == 3:
+            name_card = " ".join(elements[0:2])
+        elif len(elements) == 2:
+            name_card = elements[0]
+    return f'{name_card} {card_number}'
 
 
 def get_date(date: str) -> str:
