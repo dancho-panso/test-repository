@@ -2,7 +2,8 @@ import pytest
 
 
 @pytest.fixture
-def list_dict():
+def list_dict() -> list[dict]:
+    """Функция для фикстуры list_dict"""
     return [
         {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
         {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
@@ -10,35 +11,42 @@ def list_dict():
         {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
     ]
 
+
 @pytest.fixture
-def dict_executed():
+def dict_executed() -> list[dict]:
+    """Функция для фикстуры dict_executed"""
     return [
         {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
         {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
     ]
 
+
 @pytest.fixture
-def dict_canceled():
+def dict_canceled() -> list[dict]:
+    """Функция для фикстуры dict_canceled"""
     return [
         {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
         {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
     ]
 
+
 @pytest.fixture
-def sort_1():
+def sort_1() -> list[dict]:
+    """Функция для фикстуры sort_1"""
     return [
-        {'date': '2019-07-03T18:35:29.512364', 'id': 41428829, 'state': 'EXECUTED'},
-     {'date': '2018-10-14T08:21:33.419441', 'id': 615064591, 'state': 'CANCELED'},
-     {'date': '2018-09-12T21:27:25.241689', 'id': 594226727, 'state': 'CANCELED'},
-     {'date': '2018-06-30T02:08:58.425572', 'id': 939719570, 'state': 'EXECUTED'}
+        {"date": "2019-07-03T18:35:29.512364", "id": 41428829, "state": "EXECUTED"},
+        {"date": "2018-10-14T08:21:33.419441", "id": 615064591, "state": "CANCELED"},
+        {"date": "2018-09-12T21:27:25.241689", "id": 594226727, "state": "CANCELED"},
+        {"date": "2018-06-30T02:08:58.425572", "id": 939719570, "state": "EXECUTED"},
     ]
 
 
 @pytest.fixture
-def sort_reverse():
+def sort_reverse() -> list[dict]:
+    """Функция для фикстуры sort_reverse"""
     return [
-        {'date': '2018-06-30T02:08:58.425572', 'id': 939719570, 'state': 'EXECUTED'},
- {'date': '2018-09-12T21:27:25.241689', 'id': 594226727, 'state': 'CANCELED'},
- {'date': '2018-10-14T08:21:33.419441', 'id': 615064591, 'state': 'CANCELED'},
- {'date': '2019-07-03T18:35:29.512364', 'id': 41428829, 'state': 'EXECUTED'}
+        {"date": "2018-06-30T02:08:58.425572", "id": 939719570, "state": "EXECUTED"},
+        {"date": "2018-09-12T21:27:25.241689", "id": 594226727, "state": "CANCELED"},
+        {"date": "2018-10-14T08:21:33.419441", "id": 615064591, "state": "CANCELED"},
+        {"date": "2019-07-03T18:35:29.512364", "id": 41428829, "state": "EXECUTED"},
     ]
